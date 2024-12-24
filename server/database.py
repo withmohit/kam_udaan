@@ -18,8 +18,20 @@ def create_tables():
             assigned_kam TEXT NOT NULL
         );
     """)
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS contacts (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        lead_id INTEGER NOT NULL,
+        person_name TEXT NOT NULL,
+        role TEXT NOT NULL,
+        phone_number TEXT NOT NULL,
+        email TEXT,
+        FOREIGN KEY (lead_id) REFERENCES leads (id) ON DELETE CASCADE
+    );
+    """)
     conn.commit()
     conn.close()
+
 
 # Initialize tables
 create_tables()
