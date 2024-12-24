@@ -6,6 +6,7 @@ app = FastAPI()
 # Register routes
 app.include_router(lead_router)
 
+
 @app.get("/")
 async def root():
     return {"message": "Welcome to the Lead Management System!"}
