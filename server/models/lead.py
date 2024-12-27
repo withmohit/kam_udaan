@@ -3,13 +3,7 @@ from pydantic import BaseModel
 class Lead(BaseModel):
     restaurant_name: str
     address: str
-    contact_number: str
+    frequency: int
+    order_count: int
     current_status: str
     assigned_kam: str
-
-class Contact(BaseModel):
-    person_name: str
-    role: str
-    phone_number: str
-    email: str
-    lead_id: int

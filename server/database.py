@@ -13,8 +13,9 @@ def create_tables():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             restaurant_name TEXT NOT NULL,
             address TEXT NOT NULL,
-            contact_number TEXT NOT NULL,
             current_status TEXT NOT NULL,
+            frequency INTEGER NOT NULL,
+            order_count INTEGER NOT NULL,
             assigned_kam TEXT NOT NULL
         );
     """)
@@ -26,6 +27,15 @@ def create_tables():
         role TEXT NOT NULL,
         phone_number TEXT NOT NULL,
         email TEXT,
+        FOREIGN KEY (lead_id) REFERENCES leads (id) ON DELETE CASCADE
+    );
+    """)
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS call_plan (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        lead_id INTEGER NOT NULL,
+        last_date DATE NOT NULL,
+        next_date DATE NOT NULL,
         FOREIGN KEY (lead_id) REFERENCES leads (id) ON DELETE CASCADE
     );
     """)
