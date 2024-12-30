@@ -1,8 +1,7 @@
 # Kam Udaan - Lead Management System
 
 ## Overview
-
-Kam Udaan is a lead management system currently under development. The project aims to streamline the process of managing leads, tracking interactions, and improving sales efficiency.
+This project is an assignment by Udaan. Kam Udaan is a lead management system currently under development. The project aims to streamline the process of managing leads, tracking interactions, and improving sales efficiency.
 
 ## Features
 
@@ -13,5 +12,5 @@ Kam Udaan is a lead management system currently under development. The project a
 
 ## Installation
 
-Instructions for installation will be provided once the project reaches a stable release.
+Instructions for installation will be provided once the project completely meets requirements.
 
