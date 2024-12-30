@@ -5,7 +5,7 @@ def add_pocs(lead_id,data):
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("""
-        INSERT INTO contacts (lead_id, name, role, phone_number, email)
+        INSERT INTO contacts (lead_id, person_name, role, phone_number, email)
         VALUES (?, ?, ?, ?, ?);
     """, (lead_id, data.person_name, data.role, data.phone_number, data.email))
     conn.commit()

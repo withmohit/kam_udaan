@@ -1,18 +1,19 @@
 import React from 'react';
-import LeadsList from './LeadsList';
-import PendingCalls from './PendingCalls';
-import RecentInteractions from './RecentInteractions';
-import SearchBar from './SearchBar';
+import AddLeadForm from './AddLeadForm';
+import UpdateCallPlanForm from './UpdateCallPlanForm';
+import AddPocForm from './AddPocForm';
+import AddInteractionForm from './AddInteractionForm';
 
 function Dashboard() {
-  return (
-    <div>
-      <SearchBar />
-      <LeadsList />
-      <PendingCalls />
-      <RecentInteractions />
-    </div>
-  );
+    return (
+        <div>
+            <h1>Dashboard</h1>
+            <AddLeadForm />
+            <UpdateCallPlanForm />
+            <AddPocForm />
+            <AddInteractionForm />
+        </div>
+    );
 }
 
 export default Dashboard;
