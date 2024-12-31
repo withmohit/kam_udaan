@@ -1,17 +1,14 @@
 import React from 'react';
-import AddLeadForm from './AddLeadForm';
-import UpdateCallPlanForm from './UpdateCallPlanForm';
-import AddPocForm from './AddPocForm';
-import AddInteractionForm from './AddInteractionForm';
-
+import './Dashboard.css';
+// import OrderForm from "./OrderForm";
+import CallPlans from "./CallPlans";
+import PerformanceList from "./PerformanceList";
 function Dashboard() {
     return (
-        <div>
-            <h1>Dashboard</h1>
-            <AddLeadForm />
-            <UpdateCallPlanForm />
-            <AddPocForm />
-            <AddInteractionForm />
+        <div className="dashboard">
+            <center><h1>Dashboard</h1></center>
+            <CallPlans/>
+            <PerformanceList/>
         </div>
     );
 }

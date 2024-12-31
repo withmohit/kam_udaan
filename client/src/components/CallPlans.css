@@ -1,0 +1,64 @@
+/* Call Plan and No Interaction Sections */
+.call-section, .no-interaction-section {
+    margin: 40px;
+    padding: 10px;
+    border-radius: 8px;
+    width: 80%;
+    background-color: #1a1a1a;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+    
+}
+
+.call-section h2, .no-interaction-section h2 {
+    font-size: 1.6em;
+    color: #646cff;
+    border-bottom: 2px solid #646cff;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.call-plan, .no-interaction {
+    display: flex;
+    flex-wrap: wrap; /* Wrap items if the screen width is small */
+    gap: 20px; /* Space between items */
+}
+
+.call-item, .no-interaction-item {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    width: 250px; /* Set fixed width for items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    margin-bottom: 20px; /* Add margin to create space between items */
+}
+
+.call-item:nth-child(odd), .no-interaction-item:nth-child(odd) {
+    background-color: #2a2a2a;
+}
+
+.call-item h3, .no-interaction-item h3 {
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.call-item p, .no-interaction-item p {
+    font-size: 0.9em;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+.call-item p strong, .no-interaction-item p strong {
+    color: #fff;
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+    .call-item, .no-interaction-item {
+        width: 100%; /* Full width on smaller screens */
+    }
+}

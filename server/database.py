@@ -3,6 +3,7 @@ import sqlite3
 def get_db_connection():
     conn = sqlite3.connect("db.sqlite")
     conn.row_factory = sqlite3.Row
+    conn.execute("""PRAGMA foreign_keys = ON;""")
     return conn
 
 def create_tables():
@@ -14,7 +15,6 @@ def create_tables():
         restaurant_name TEXT NOT NULL,
         address TEXT NOT NULL,
         current_status TEXT NOT NULL,
-        frequency INTEGER NOT NULL,
         assigned_kam TEXT NOT NULL
         );
     """)
@@ -55,6 +55,7 @@ def create_tables():
         lead_id INTEGER NOT NULL,
         order_date DATETIME NOT NULL,
         order_amount REAL NOT NULL, -- Total value of the order
+        order_status TEXT CHECK (order_status IN ('Pending', 'Completed')) NOT NULL,
         FOREIGN KEY (lead_id) REFERENCES leads (id) ON UPDATE CASCADE
     );
     """)

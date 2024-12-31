@@ -1,11 +1,21 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AllForms from "./components/Forms";
 import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
     <div className="App">
-      {/* <h1>Restaurant Leads Tracker</h1> */}
-      <Dashboard />
+      <Router>
+            <Routes>
+                <Route path="/forms" element={<AllForms/>} />
+                <Route path="/" element={<Dashboard/>} />
+                {/* <Route path="/forms" element={<Forms />} />
+                <Route path="/call-plan" element={<CallPlans />} />
+                <Route path="/performance" element={<PerformanceList/>} /> */}
+            </Routes>
+        </Router>
+      
     </div>
   );
 }

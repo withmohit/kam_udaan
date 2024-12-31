@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import './form.css';
 function AddInteractionForm() {
     const [formData, setFormData] = useState({
         lead_id: '',
