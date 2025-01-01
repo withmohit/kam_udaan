@@ -9,13 +9,25 @@ def get_db_connection():
 def create_tables():
     conn = get_db_connection()
     cursor = conn.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS kam(
+        id integer primary key autoincrement,
+        name text not null,
+        email text not null,
+        phone_number text not null,
+        password text not null --Currently storing password in plain text
+        );
+    """)
+
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS leads (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         restaurant_name TEXT NOT NULL,
         address TEXT NOT NULL,
         current_status TEXT NOT NULL,
-        assigned_kam TEXT NOT NULL
+        kam_id INTEGER NOT NULL,
+        FOREIGN KEY (kam_id) REFERENCES kam (id) ON DELETE RESTRICT ON UPDATE CASCADE
         );
     """)
     cursor.execute("""
@@ -26,7 +38,7 @@ def create_tables():
         role TEXT NOT NULL,
         phone_number TEXT NOT NULL,
         email TEXT,
-        FOREIGN KEY (lead_id) REFERENCES leads (id) ON UPDATE CASCADE
+        FOREIGN KEY (lead_id) REFERENCES leads (id)
     );
     """)
     cursor.execute("""
@@ -36,7 +48,7 @@ def create_tables():
         frequency INTEGER NOT NULL,
         last_date DATE NULL,
         next_date DATE NULL,
-        FOREIGN KEY (lead_id) REFERENCES leads (id) ON UPDATE CASCADE
+        FOREIGN KEY (lead_id) REFERENCES leads (id)
     );
     """)
     cursor.execute("""
@@ -46,7 +58,7 @@ def create_tables():
         interaction_date DATETIME NOT NULL,
         type TEXT CHECK (type IN ('Call', 'Visit', 'Order')) NOT NULL,
         notes TEXT,
-        FOREIGN KEY (lead_id) REFERENCES leads (id) ON UPDATE CASCADE
+        FOREIGN KEY (lead_id) REFERENCES leads (id)
     );
     """)
     cursor.execute("""
@@ -56,7 +68,7 @@ def create_tables():
         order_date DATETIME NOT NULL,
         order_amount REAL NOT NULL, -- Total value of the order
         order_status TEXT CHECK (order_status IN ('Pending', 'Completed')) NOT NULL,
-        FOREIGN KEY (lead_id) REFERENCES leads (id) ON UPDATE CASCADE
+        FOREIGN KEY (lead_id) REFERENCES leads (id)
     );
     """)
     conn.commit()

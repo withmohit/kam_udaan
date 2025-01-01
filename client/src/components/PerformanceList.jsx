@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function PerformanceList() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        // Simulate API call
-        fetch('http://127.0.0.1:8000/leads/performance') // Replace with your API endpoint
-            .then((response) => response.json())
-            .then((data) => setData(data))
+        // Fetch performance data using axios
+        const config = {
+            headers: {
+                'Kam-Id': localStorage.getItem('kam_id') || 'default_kam_id', // Replace with your logic for retrieving Kam-Id
+            },
+        };
+        axios.get('http://127.0.0.1:8000/leads/performance',config) // Replace with your API endpoint
+            .then((response) => setData(response.data))
             .catch((error) => console.error('Error fetching performance data:', error));
     }, []);
 
@@ -23,6 +28,7 @@ function PerformanceList() {
                             borderRadius: '8px',
                             padding: '10px',
                             marginBottom: '10px',
+                            width: '200%',
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',

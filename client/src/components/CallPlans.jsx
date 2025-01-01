@@ -11,7 +11,12 @@ const CallPlans = () => {
   useEffect(() => {
     const fetchCallPlans = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/leads/call-plan');
+        const config = {
+          headers: {
+              'Kam-Id': localStorage.getItem('kam_id') || 'default_kam_id', // Replace with your logic for retrieving Kam-Id
+          },
+      };
+        const response = await axios.get('http://127.0.0.1:8000/leads/call-plan',config);
         setCallPlans(response.data); // Assuming the response returns the correct array of call plans
         setLoading(false);
       } catch (err) {
@@ -27,7 +32,7 @@ const CallPlans = () => {
   const noInteraction = callPlans.filter(plan => plan.next_date === "");
 
   return (
-    <div>
+    <div className='boxx'>
       <h2>Pending Call Section</h2>
       {loading ? (
         <p>Loading...</p>
@@ -41,7 +46,8 @@ const CallPlans = () => {
                 <h3>{plan.restaurant_name}</h3>
                 <p><strong>Lead ID:</strong> {plan.lead_id}</p>
                 <p><strong>Last Interaction:</strong> {plan.last_date || 'No interaction'}</p>
-                <p><strong>Next Call:</strong> {plan.next_date || 'No interaction'}</p>
+                <a href={`http://127.0.0.1:8000/leads/${plan.lead_id}/contacts`} target="_blank" rel="noopener noreferrer">View Contacts</a>
+                <a href={`http://127.0.0.1:8000//leads/${plan.lead_id}/interactions/`} target="_blank" rel="noopener noreferrer">All Interactions</a>
               </div>
             ))
           ) : (
@@ -58,7 +64,7 @@ const CallPlans = () => {
               <h3>{plan.restaurant_name}</h3>
               <p><strong>Lead ID:</strong> {plan.lead_id}</p>
               <p><strong>Last Interaction:</strong> No interaction done.</p>
-              <p><strong>Next Call:</strong> No interaction done.</p>
+              <a href={`http://127.0.0.1:8000/leads/${plan.lead_id}/contacts`} target="_blank" rel="noopener noreferrer">View Contacts</a>
             </div>
           ))
         ) : (

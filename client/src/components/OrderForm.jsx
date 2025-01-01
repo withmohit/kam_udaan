@@ -39,7 +39,7 @@ const OrderForm = () => {
 
   return (
     <div>
-      <h2>Make Order</h2>
+      <h2>Make Order (For Restaurants/Leads)</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="lead_id">Lead ID:</label>

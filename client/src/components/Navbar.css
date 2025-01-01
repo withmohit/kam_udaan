@@ -1,0 +1,73 @@
+/* Navbar container */
+.navbar {
+    background-color: #27034b;
+    color: white;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navbar inner container */
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Brand section */
+  .navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  /* Navbar links container */
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Individual link styles */
+  .nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link span {
+    margin-left: 5px;
+  }
+  
+  /* Active link style */
+  .nav-link.active {
+    color: #4caf50; /* Green color for active links */
+    font-weight: bold;
+  }
+  
+  /* Hover effect for links */
+  .nav-link:hover {
+    color: #ccc;
+  }
+  
+  /* Logout button styles */
+  .nav-link.logout {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-link.logout:hover {
+    color: #ff6b6b; /* Red color on hover */
+  }
+  
+  /* Icon styles */
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+  
