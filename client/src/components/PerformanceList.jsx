@@ -18,7 +18,7 @@ function PerformanceList() {
 
     return (
         <div style={{ padding: '60px', fontFamily: 'Arial, sans-serif' }}>
-            <h2>Lead Performance Data</h2>
+            <h2>Lead Performance Data <br/>(<a href={`http://127.0.0.1:8000/leads/orders`} target="_blank" rel="noopener noreferrer">View all orders</a>)</h2>
             <ul style={{ listStyleType: 'none', padding: 0 }}>
                 {data.map((item) => (
                     <li 
@@ -51,6 +51,7 @@ function PerformanceList() {
                             <div style={{ fontSize: '10px', color: 'white' }}>
                                 {item.performance_score.toFixed(1)}
                             </div>
+                            <a href={`http://127.0.0.1:8000/leads/${item.lead_id}/orders`}target="_blank" rel="noopener noreferrer">View orders</a>
                         </div>
                     </li>
                 ))}

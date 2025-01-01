@@ -10,8 +10,8 @@ async def create_order(lead_id:int, data: Order):
     return make_order(lead_id, data)
 
 @router.get("/leads/{lead_id}/orders/")
-async def view_order():
-    return get_orders_by_id()
+async def view_order(lead_id:int):
+    return get_orders_by_id(lead_id)
 
 @router.get("/leads/orders/")
 async def all_orders():

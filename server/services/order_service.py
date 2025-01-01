@@ -16,8 +16,10 @@ def get_orders_summary():
     cursor=conn.cursor()
     orders=cursor.execute("""
         SELECT restaurant_name,count(orders.id) as order_count,sum(order_amount) as total_order_amount
-        join leads on leads.id = orders.lead_id;
-        group by lead_id
+        from orders
+        join leads on leads.id = orders.lead_id
+        group by orders.lead_id
+        order by total_order_amount desc;
     """).fetchall()
     conn.close()
     return orders
