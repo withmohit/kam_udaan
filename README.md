@@ -85,6 +85,10 @@ To run this Lead Management System, ensure the following versions are installed:
    ```bash
    pip3 install -r requirements.txt
    ```
+8. Database Interaction
+- If you want to interact with `db.sqlite`, you can install **SQLiteStudio**:
+  - Download SQLiteStudio from [SQLiteStudio Official Website](https://sqlitestudio.pl/).
+  - Follow the installation instructions provided on the website.
 
 ### Running the System
 
