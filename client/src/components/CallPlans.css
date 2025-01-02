@@ -1,6 +1,7 @@
 /* Common Styles for Call Plan and No Interaction Sections */
 .boxx{
-    padding: 60px;
+    padding: 20px;
+    margin-top: 0px;
     font-family: 'Arial', sans-serif;
 }
 .call-section, .no-interaction-section {

@@ -35,6 +35,7 @@ function PerformanceList() {
                         }}
                     >
                         <div>
+                            <strong>Lead Name:</strong> {item.restaurant_name} <br />
                             <strong>Lead ID:</strong> {item.lead_id} <br />
                             <strong>Total Amount:</strong> ₹{item.total_amount} <br />
                             <strong>Total Orders:</strong> {item.total_order_count}
@@ -44,14 +45,18 @@ function PerformanceList() {
                                 fontSize: '12px',
                                 fontWeight: 'bold',
                                 color: 'white',
+                                margin: '10px 10px 10px',
                                 textAlign: 'right',
                             }}
                         >
-                            Performance Score:
                             <div style={{ fontSize: '10px', color: 'white' }}>
-                                {item.performance_score.toFixed(1)}
+                            PS: {item.performance_score.toFixed(1)}
                             </div>
+                            <br/>
                             <a href={`http://127.0.0.1:8000/leads/${item.lead_id}/orders`}target="_blank" rel="noopener noreferrer">View orders</a>
+                            <br/>
+                            <a href={`http://127.0.0.1:8000/leads/performance/${item.lead_id}/pattern`}target="_blank" rel="noopener noreferrer">Analysis</a>
+
                         </div>
                     </li>
                 ))}

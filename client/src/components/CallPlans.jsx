@@ -47,7 +47,7 @@ const CallPlans = () => {
                 <p><strong>Lead ID:</strong> {plan.lead_id}</p>
                 <p><strong>Last Interaction:</strong> {plan.last_date || 'No interaction'}</p>
                 <a href={`http://127.0.0.1:8000/leads/${plan.lead_id}/contacts`} target="_blank" rel="noopener noreferrer">View Contacts</a>
-                <a href={`http://127.0.0.1:8000//leads/${plan.lead_id}/interactions/`} target="_blank" rel="noopener noreferrer">All Interactions</a>
+                <a href={`http://127.0.0.1:8000/leads/${plan.lead_id}/interactions/`} target="_blank" rel="noopener noreferrer">All Interactions</a>
               </div>
             ))
           ) : (
