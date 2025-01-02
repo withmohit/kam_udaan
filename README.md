@@ -1,55 +1,21 @@
 # Udaan Lead Management System 🚀
 
-## Introduction
+## Project Overview
 
-Udaan, a leading B2B e-commerce platform, requires a comprehensive Lead Management System for Key Account Managers (KAMs). This system is designed to help KAMs manage relationships with large restaurant accounts efficiently. It provides tools to track and manage leads, monitor interactions, and evaluate account performance effectively.
+The Lead Management System for Udaan is a tool designed to help Key Account Managers (KAMs) efficiently manage relationships with large restaurant accounts. It offers:
 
----
+- **Lead Management**: Add and track restaurant leads.
+- **Contact Management**: Manage multiple Points of Contact (POCs) with roles and details.
+- **Interaction Tracking**: Record calls, orders, and maintain interaction logs.
+- **Call Planning**: Schedule and track calls with customizable frequencies.
+- **Performance Tracking**: Monitor account performance, ordering patterns, and identify underperforming accounts.
 
-## Requirements
+### Technical Highlights
+- Efficient database schemas and real-time querying.
+- RESTful APIs with secure authentication and error handling.
+- Automated call scheduling and performance metric calculations.
 
-### Core Features
-
-#### Lead Management
-- Add new restaurant leads and store their basic information.
-- Track the status of each lead.
-
-#### Contact Management
-- Manage multiple Points of Contact (POCs) for each restaurant.
-- Store detailed contact information, including name, role, and contact details.
-- Support different roles for POCs.
-
-#### Interaction Tracking
-- Record all interactions, including calls and orders.
-- Maintain detailed logs with dates and interaction descriptions.
-
-#### Call Planning
-- Set custom call frequencies for leads.
-- Display leads that require a call today.
-- Track the last call made for each lead.
-
-#### Performance Tracking
-- Monitor high-performing accounts based on metrics.
-- Analyze ordering patterns and frequency.
-- Identify underperforming accounts for targeted action.
-
----
-
-### Technical Requirements
-
-#### Data Models
-- Design efficient database schemas for entity relationship management.
-- Ensure robust querying capabilities for real-time data access.
-
-#### API Design
-- Provide RESTful APIs for all operations.
-- Implement comprehensive error handling mechanisms.
-- Ensure secure authentication and authorization processes.
-
-#### Business Logic
-- Automate call scheduling based on lead requirements.
-- Provide tools to calculate and display account performance metrics.
-- Handle lead status transitions seamlessly.
+This system ensures streamlined workflows, improved client relationships, and better account performance tracking for KAMs.
 
 ---
 
